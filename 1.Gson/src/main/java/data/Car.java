@@ -1,6 +1,8 @@
 package data;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Car {
     private String brand;
@@ -8,7 +10,7 @@ public class Car {
     private Date year;
     private Engine engine;
     private Equipment equipment;
-    private Tuning tuning;
+    private List<Tuning> tuning;
 
     public Car(String brand, String model, Date year, Engine engine, Equipment equipment) {
         this.brand = brand;
@@ -19,7 +21,7 @@ public class Car {
     }
 
     {
-        tuning = null;
+        tuning = new ArrayList<Tuning>();
     }
 
     public String getBrand() {
@@ -42,9 +44,6 @@ public class Car {
         return equipment;
     }
 
-    public Tuning getTuning() {
-        return tuning;
-    }
 
     public void setBrand(String brand) {
         this.brand = brand;
@@ -66,7 +65,11 @@ public class Car {
         this.equipment = equipment;
     }
 
+    public List<Tuning> getTuning() {
+        return tuning;
+    }
+
     public void setTuning(Tuning tuning) {
-        this.tuning = tuning;
+        this.tuning.add(tuning);
     }
 }

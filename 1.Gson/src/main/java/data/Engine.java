@@ -1,8 +1,11 @@
 package data;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Engine {
     private String type;
     private String power;
+    @SerializedName("drive unit")
     private String driveUnit;
     private Transmission transmission;
 

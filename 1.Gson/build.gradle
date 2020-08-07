@@ -11,4 +11,11 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    implementation 'org.apache.commons:commons-text:1.6'
+
 }

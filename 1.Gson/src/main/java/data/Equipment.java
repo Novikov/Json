@@ -2,27 +2,28 @@ package data;
 
 //комплектация
 public class Equipment {
-    private String type;
+    private String name;
     private String color;
 
-    public Equipment(String type, String color) {
-        this.type = type;
+    public Equipment(String name, String color) {
+        this.name = name;
         this.color = color;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
     public String getColor() {
         return color;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setColor(String color) {
         this.color = color;
     }
+
 }
