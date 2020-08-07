@@ -1,4 +1,4 @@
-package serialization;
+package common;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -6,17 +6,24 @@ import data.AutoPark;
 import data.Car;
 import data.CarUtil;
 import data.Equipment;
+import deserialization.EquipmentDeserializer;
+import serialization.EquipmentSerializer;
 
 public class Program {
     public static void main(String[] args) {
         AutoPark autoPark = CarUtil.createAutoPark();
         Gson gson = new GsonBuilder().
-//                registerTypeAdapter(Car.class, new CarSerializer()).
                 registerTypeAdapter(Equipment.class,new EquipmentSerializer()).
+                registerTypeAdapter(Equipment.class,new EquipmentDeserializer()).
                 setPrettyPrinting().
                 create();
         String jsonString = gson.toJson(autoPark);
         System.out.println(jsonString);
+
+        AutoPark deserializedAutoPark = gson.fromJson(jsonString,AutoPark.class);
+
+        System.out.println(deserializedAutoPark.getCars().get(0).getEquipment().getColor());
+
     }
 }
 
